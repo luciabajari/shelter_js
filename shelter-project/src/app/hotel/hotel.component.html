@@ -1,0 +1,36 @@
+<article class="hotel-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="side" *ngFor="let hot of hotel">
+            <h1> {{hot.name}} </h1>
+            <br>
+            <table class="center">
+              <tr>
+                <td>
+              <tr>
+                <td> <img src="assets/img/phone.png"> </td>
+                <td>{{hot.phoneNumber}}</td>
+
+              </tr>
+              <br>
+              <br>
+              <tr>
+                  <td> <img src="assets/img/email.png"> </td>
+                  <td>{{hot.email}}</td>
+              </tr> 
+              <br>
+              <br>
+              <tr>
+                  <td> <img src="assets/img/address.png"> </td>
+                  <td> {{hot.address}}</td>
+              </tr>
+            </td> 
+            <td><img class="map" src="assets/img/map.png"> </td>
+            </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</article>

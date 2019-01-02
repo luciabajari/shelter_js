@@ -1,0 +1,26 @@
+<article class="main-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Osztályok</h1>
+            <div class="main-div" *ngIf="!hospitalsLoading">
+                <table id="customers">
+                    <tr>
+                      <th>Név</th>
+                      <th>Telefonszám</th>
+                      <th>Email</th>
+                      <th>Cím</th>
+                    </tr>
+                
+                <tr *ngFor="let hospital of hospitals">
+                    <td>{{hospital.name}}</td>
+                    <td>{{hospital.phoneNumber}}</td>
+                    <td>{{hospital.email}}</td>
+                    <td>{{hospital.address}}</td>
+                  </tr>
+                </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

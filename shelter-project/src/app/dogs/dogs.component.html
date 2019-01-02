@@ -1,0 +1,44 @@
+<article class="main-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="main-div">
+            <h1>Kutyák</h1>
+              <table id="customers">
+                  <tr>
+                    <th>Név</th>
+                    <th>Életkor</th>
+                    <th>Státusz</th>
+                    <th>Regisztráció időpontja</th>
+                    <th>Kutyával kijön</th>
+                    <th>Cicával kijön</th>
+                    <th>Gyerekkel kijön</th>
+                    <th *ngIf="isAdmin" >Műveletek</th>
+                  </tr>
+                
+             
+                  <tr *ngFor="let dog of dogs" (click)="navigateTo(dog.id)">
+                    <td >{{dog.name}}</td>
+                    <td>{{dog.age}}</td>
+                    <td>{{dog.status}}</td>
+                    <td>{{dog.createDate}}</td>
+                    <td>{{dog.getOnWellWithDOGS ? 'igen':'nem'}}</td>
+                    <td>{{dog.getOnWellWithCATS ? 'igen':'nem'}}</td>
+                    <td>{{dog.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                    <td *ngIf="isAdmin">
+                        <!-- <div class="btn-group"> -->
+                          <button class="button" [routerLink]="['/animal/put/'+dog.id]">Szerkesztés</button>
+                          
+                          <button class="button" (click)="delete(dog.id, $event)">Törlés</button>
+                      <!-- </div> -->
+                    </td>
+                          
+                    </tr>
+
+        </table>
+              
+      </div>
+    </div>
+  </div>
+</div>
+</article>

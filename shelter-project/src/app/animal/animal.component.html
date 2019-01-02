@@ -1,0 +1,122 @@
+
+
+
+
+<article class="main-article">
+
+<div class="loading" [ngClass]="{ 'active': animalsLoading, 'inactive': !animalsLoading }">
+  Betoltes..
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Állatok</h1>
+        <div class="main-div" *ngIf="!animalsLoading">
+            <div class="container">
+                <div class="row">
+                <button class="newAnimal">   
+                  <a [routerLink]="['post']">Új állat felvétele</a>
+                </button>
+                </div>
+              </div>
+            <table class="center">
+                <tr>
+                  <td>
+                    <div class="container">
+                      <a [routerLink]="['/dogs']">
+                          <img src="assets/img/dog.jpg" alt="Avatar" class="image" style="width:100%">
+                        
+                        <div class="middle">
+                          <div class="text">Kutyák</div>
+                        </div>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                      <div class="container">
+                          <a [routerLink]="['/cats']">
+                            <img src="assets/img/cat.jpg" alt="Avatar" class="image" style="width:100%">
+                          
+                            <div class="middle">
+                              <div class="text">Macskák</div>
+                            </div>
+                          </a>
+                        </div>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <hr>
+              <br>
+            <table id="customers">
+                <tr>
+                  <th>Név</th>
+                  <th>Típus</th>
+                  <th>Életkor</th>
+                  <th>Fajta</th>
+                  <th>Státusz</th>
+                  <th>Regisztráció időpontja</th>
+                  <th>Kutyával kijön</th>
+                  <th>Cicával kijön</th>
+                  <th>Gyerekkel kijön</th>
+                  <th *ngIf="isAdmin" >Műveletek</th>
+                </tr>
+              
+              
+          
+            <!-- <p>ID: {{animal.id}}</p> -->
+            <!-- <a [routerLink]="['/animal', animal.id]">Animal-ID</a> -->
+            <!-- <br> -->
+            <!-- <a href="animal/{{animal.id}}">Név: {{animal.name}}</a> -->
+           
+                <tr *ngFor="let animal of animals" (click)="navigateTo(animal.id)">
+                  <td>{{animal.name}}</td>
+                  <td>{{animal.animalType=="DOG" ? 'Kutya':'Cica'}}</td>
+                  <td>{{animal.age}}</td>
+                  <td>{{animal.breed}}</td>
+                  <td>{{animal.status}}</td>
+                  <td>{{animal.createDate}}</td>
+                  <td>{{animal.getOnWellWithDOGS ? 'igen':'nem'}}</td>
+                  <td>{{animal.getOnWellWithCATS ? 'igen':'nem'}}</td>
+                  <td>{{animal.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                  <td *ngIf="isAdmin">
+                      <!-- <div class="btn-group"> -->
+                        <button class="button" [routerLink]="['/animal/put/'+animal.id]">Szerkesztés</button>
+                        
+                        <button class="button" (click)="delete(animal.id, $event)">Törlés</button>
+                    <!-- </div> -->
+                  </td>
+                        
+                  </tr>
+               
+              
+              
+              
+            <!-- <p>Név: {{animal.name}}</p>
+            <p>Típus: {{animal.animalType}}</p>
+            <p>Életkor: {{animal.age}}</p>
+            <p>Fajta: {{animal.breed}}</p> -->
+          
+            <!-- <hr> -->
+        
+      
+      </table>
+      <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="main-div" *ngIf="!animalsLoading">
+    
+    <p>id: {{animal.id}}</p>
+    <p>name: {{animal.name}}</p>
+</div> -->
+
+
+<!-- <input type="text" [(ngModel)]="alma" style="border: 1px solid black">
+{{alma}}
+
+<button (click)="resetAlma()">Reset</button> -->
+</article>

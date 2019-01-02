@@ -1,0 +1,51 @@
+<article class="main-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-div">
+          <fieldset>
+              <label for="fname">Kérem adja meg a nevét</label> 
+            <input type="text" [(ngModel)]="name">
+            <!-- {{name}} -->
+          
+          <p>
+              <label for="fname">Kérem adja meg a jelszavát: </label> 
+              <input type="password" [(ngModel)]="password">
+          </p>
+          <p> 
+            <label for="fname">Kérem adja meg az email címét: </label>
+            <input type="text" [(ngModel)]="email">
+          </p>
+          <p> 
+              <label for="fname">Kérem adja meg a telefonszámát: </label>
+              <input type="text" [(ngModel)]="phoneNumber">
+            </p>
+            <p> 
+                <label for="fname">Kérem adja meg a címét: </label>
+                <input type="text" [(ngModel)]="address">
+              </p>
+          <p>
+              <label for="fname"> Státusza: </label>
+            <select [(ngModel)]="role">
+              
+              <option value="ROLE_ADMIN">Admin</option>
+              <option value="ROLE_UGYFEL">Ügyfél</option>
+              
+            </select> 
+          </p>
+          <br>
+          <button (click)="edit()">Mentés</button>
+          
+         
+        </fieldset>
+                  
+                 
+                
+              <!-- <input type="submit" value="Submit"> -->
+          
+          </div>
+          
+    </div>
+  </div>
+  </div>
+  </article>

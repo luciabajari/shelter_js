@@ -1,0 +1,97 @@
+<article class="main-article">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-div">
+        <fieldset>
+            <label for="fname">Kérem adja meg az állat nevét</label> 
+          <input type="text" [(ngModel)]="name">
+          <!-- {{name}} -->
+        
+        <p>
+            <label for="fname">Állat típusa:</label> 
+          <select [(ngModel)]="animalType">
+            
+            <option value="DOG">Kutya</option>
+            <option value="CAT">Cica</option>
+          </select> 
+        </p>
+        <p>
+            <label for="fname"> Státusza: </label> 
+          <select [(ngModel)]="status">
+            
+            <option value="ADOPTABLE">Örökbefogadható</option>
+            <option value="ADOPTED">Örökbefogadott</option>
+            <option value="HOSPITAL">Kórházi kezelés alatt</option>
+            <option value="HOTEL">Panzióvendég</option>
+          </select> 
+        </p>
+        <p> 
+            <label for="fname">Fajta: </label>
+          <input type="text" [(ngModel)]="breed">
+        <!-- {{breed}} -->
+        </p>
+        <p> 
+            <label for="fname">Életkor: </label>
+          <input type="number" placeholder="Between(0,20)" [(ngModel)]="age" min="0" max="20">
+          <!-- {{age}} -->
+          </p>
+          <p> 
+              <label for="fname">Rövid leírás: </label>
+            <textarea [(ngModel)]="description" rows="4" cols="50">
+              
+            </textarea>
+          </p>
+          <div>
+              <label for="fname">Jól kijön a kutyákkal? </label>
+            
+          <form action="">
+            <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs" [value]="false" checked> Nem<br>
+            <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs" [value]="true" > Igen<br>
+            <!-- {{getOnWellWithDOGS}} -->
+          </form>  
+        </div>
+
+        
+        
+        <div>
+          <br>
+            <label for="fname"> Jól kijön a cicákkal? </label>
+            
+          <form action="">
+            <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" [value]="false" checked> Nem<br>
+            <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" [value]="true" > Igen<br>
+            <!-- {{getOnWellWithCATS}} -->
+          </form> 
+        </div>
+        <div>
+          <br>
+            <label for="fname">  Jól kijön a gyerekekkel? </label>
+            
+          <form action="">
+            <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" [value]="false" checked> Nem<br>
+            <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" [value]="true" > Igen<br>
+            <!-- {{getOnWellWithKIDS}} -->
+            <br>
+            <button (click)="saveDatas()">Mentés</button>
+          </form> 
+        </div>
+        
+
+
+
+
+
+
+      </fieldset>
+                
+               
+              
+            <!-- <input type="submit" value="Submit"> -->
+        
+        </div>
+        
+  </div>
+</div>
+</div>
+</article>

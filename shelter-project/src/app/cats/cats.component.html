@@ -1,0 +1,44 @@
+<article class="main-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="main-div">
+            <h1>Macskák</h1>
+              <table id="customers">
+                  <tr>
+                    <th>Név</th>
+                    <th>Életkor</th>
+                    <th>Státusz</th>
+                    <th>Regisztráció időpontja</th>
+                    <th>Kutyával kijön</th>
+                    <th>Cicával kijön</th>
+                    <th>Gyerekkel kijön</th>
+                    <th *ngIf="isAdmin" >Műveletek</th>
+                  </tr>
+                
+             
+                  <tr *ngFor="let cat of cats" (click)="navigateTo(cat.id)">
+                    <td >{{cat.name}}</td>
+                    <td>{{cat.age}}</td>
+                    <td>{{cat.status}}</td>
+                    <td>{{cat.createDate}}</td>
+                    <td>{{cat.getOnWellWithDOGS ? 'igen':'nem'}}</td>
+                    <td>{{cat.getOnWellWithCATS ? 'igen':'nem'}}</td>
+                    <td>{{cat.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                    <td *ngIf="isAdmin">
+                        <!-- <div class="btn-group"> -->
+                          <button class="button" [routerLink]="['/animal/put/'+cat.id]">Szerkesztés</button>
+                          
+                          <button class="button" (click)="delete(cat.id, $event)">Törlés</button>
+                      <!-- </div> -->
+                    </td>
+                          
+                    </tr>
+
+        </table>
+              
+      </div>
+    </div>
+  </div>
+</div>
+</article>

@@ -1,0 +1,15 @@
+img {
+    border-radius: 50%;
+    width:90;
+    height:300px;
+    align-items:center;
+    
+}
+
+table tr td{
+    padding:80px;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }

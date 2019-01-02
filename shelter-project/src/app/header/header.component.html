@@ -1,0 +1,28 @@
+<header class="container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <h1 class="col-lg-4">Shelter
+            
+        </h1>
+        <nav class="col-lg-8">
+          <!-- <a [routerLink]="['']">Főoldal</a>
+          <a *ngIf="!loggedIn" [routerLink]="['/login']">Bejelentkezés</a>
+          <a *ngIf="!loggedIn" [routerLink]="['/owner/post']">Regisztráció</a>
+          <a *ngIf="loggedIn" [routerLink]="['/animal']">Állatok</a>
+          <a *ngIf="loggedIn" [routerLink]="['/owner']">Tulajdonosok</a>
+          <a *ngIf="loggedIn" [routerLink]="['/hospital']">Osztályok</a>
+          <a *ngIf="loggedIn" (click)="logout()">Kijelentkezés</a> -->
+
+          <a [routerLink]="['']">Főoldal</a>
+          <a [routerLink]="['/login']">Bejelentkezés</a>
+          <a [routerLink]="['/owner/post']">Regisztráció</a>
+          <a [routerLink]="['/animal']">Állatok</a>
+          <a [routerLink]="['/owner']">Tulajdonosok</a>
+          <a [routerLink]="['/hospital']">Osztályok</a>
+          <a  (click)="logout()">Kijelentkezés</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

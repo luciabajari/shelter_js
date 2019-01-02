@@ -1,0 +1,174 @@
+.loading {
+    transition: all .5s
+}
+
+.inactive {
+    margin-left: -10000px;
+}
+
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); 
+}
+
+#customers {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  #customers td{
+    cursor: pointer;
+  }
+  
+  #customers tr:nth-child(even){
+    background-color: #f2f2f2;
+    
+  }
+
+  #customers tr:nth-child(odd){
+    background-color: #cfcfcf;
+    
+  }
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    
+    text-align: center;
+    font-size:20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /* text-align: left; */
+    background-color: #343a40;
+    color: white;
+  }
+
+  img {
+    border-radius: 50%;
+    width:70;
+    height:200px;
+    align-items:center;
+}
+
+table tr td{
+    padding:15px 100px ;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+  /* Cloud */ 
+    hr { 
+      border: 0; height: 0; /* Firefox... */ box-shadow: 0 0 10px 1px black; 
+    } 
+    hr:after 
+      { /* Not really supposed to work, but does */ content: "\00a0"; /* Prevent margin collapse */ 
+      }
+      .container {
+        position: relative;
+        /* width: 50%; */
+      }
+      
+      .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+      
+      .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+      }
+      
+      table tr td div.container:hover .image {
+        opacity: 0.3;
+      }
+      
+      table tr td div.container:hover .middle {
+        opacity: 1;
+      }
+      
+      .text {
+        background-color: rgb(34, 80, 68);
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+      }
+
+      button.newAnimal a{
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #053b3f;;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+      
+      button.newAnimal a:hover{
+        background-color: #0a6b72;
+      }
+      
+      button.newAnimal a:active {
+        background-color: #0a6b72;;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+  
+      .button {
+        background-color: #d2e2e4;
+        border: 1px solid #d0e0e0;
+        color: black;
+        padding: 8px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        cursor: pointer;
+        width: 100px;
+        display: block;
+        border-radius:50%;
+      }
+      
+      .button:not(:last-child) {
+        border-bottom: none; 
+      }
+      
+      .button:hover {
+        background-color:  #343a40;
+        color:#fff;
+      }
+
+      h1{
+        text-align: center;
+        color: #3f4c53; 
+        font-family: 'Helvetica Neue', sans-serif; 
+        font-size: 46px; 
+        font-weight: 100; 
+        line-height: 50px; 
+        letter-spacing: 1px; 
+        padding: 20px 20px; 
+        border-bottom: double #555;
+      }
