@@ -2,18 +2,24 @@ const connection = require('./db')
 
 class AnimalService {
 
-    getAnimals(){
+    getAnimals(res){
         connection.query('SELECT * from animal', function (error, results, fields) {
             if (error) throw error;
             console.log('Animals: ', results);
 
-            return results;
+            res.json(results)
           });
         
     }
 
-    getAnimal(animalId){
-        
+    getAnimal(animalId, res){
+        const id = connection.escape(animalId + '')
+        connection.query('SELECT * from animal WHERE id = ' + id, function (error, results, fields) {
+            if (error) throw error;
+            console.log('Animals: ', results);
+
+            res.json(results)
+          });
     }
 
     getCats(){
