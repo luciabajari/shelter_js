@@ -11,13 +11,7 @@ router.use(function timeLog (req, res, next) {
 })
 // define the home page route
 router.get('/', function (req, res, next) {
-    const animals = animalService.getAnimals();
-    try{
-        res.send(animals)
-    }catch(e){
-        res.sendStatus(409);
-    }
-    next();
+    animalService.getAnimals(res);
 })
 
 // define the cats route
@@ -27,7 +21,6 @@ router.get('/cats', function (req, res) {
     }catch(e){
         res.sendStatus(404);
     }
-    next();
 })
 router.get('/dogs', function (req, res,next) {
     try{
@@ -40,14 +33,8 @@ router.get('/dogs', function (req, res,next) {
 
 ///?????????????????????? HIBA ????????????????????? 
 router.get('/:id', function (req, res, next) {
-    const { animalId } = req.params;
-    console.log("animalId:",animalId);
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    console.log(req.params)
+    animalService.getAnimal(req.params.id,res);
 })
 
 router.post('/', function (req, res,next) {

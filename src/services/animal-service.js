@@ -1,12 +1,15 @@
+const connection = require('./db')
+
 class AnimalService {
 
     getAnimals(){
-        let animal={
-            name:"Buksi",
-            type:"DOG"
-        }
-        console.log('getAnimals() method')
-        return animal;
+        connection.query('SELECT * from animal', function (error, results, fields) {
+            if (error) throw error;
+            console.log('Animals: ', results);
+
+            return results;
+          });
+        
     }
 
     getAnimal(animalId){
