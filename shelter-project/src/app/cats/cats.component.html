@@ -21,10 +21,10 @@
                     <td >{{cat.name}}</td>
                     <td>{{cat.age}}</td>
                     <td>{{cat.status}}</td>
-                    <td>{{cat.createDate}}</td>
-                    <td>{{cat.getOnWellWithDOGS ? 'igen':'nem'}}</td>
-                    <td>{{cat.getOnWellWithCATS ? 'igen':'nem'}}</td>
-                    <td>{{cat.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                    <td>{{cat.create_date}}</td>
+                    <td>{{cat.get_on_well_with_dogs ? 'igen':'nem'}}</td>
+                    <td>{{cat.get_on_well_with_cats ? 'igen':'nem'}}</td>
+                    <td>{{cat.get_on_well_with_kids ? 'igen':'nem'}}</td>
                     <td *ngIf="isAdmin">
                         <!-- <div class="btn-group"> -->
                           <button class="button" [routerLink]="['/animal/put/'+cat.id]">Szerkesztés</button>

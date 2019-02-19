@@ -13,7 +13,7 @@ export class AnimalComponent implements OnInit {
   public isAdmin=true
   private animals
   private animal={
-    id:3,
+    id:null,
     name:'',
     animalType:'',
     createDate:'',
@@ -43,6 +43,7 @@ export class AnimalComponent implements OnInit {
     .then(animals=>{
       this.animalsLoading=false;
       this.animals=animals;
+      console.log(this.animals)
     })
   }
 
@@ -52,7 +53,7 @@ export class AnimalComponent implements OnInit {
   }
 
   getAnimalByID(id:number){
-    this.animalService.getAnimalById(this.id)
+    this.animalService.getAnimalById(id)
       .then(animal => {
         this.animalsLoading = false
         this.animal = animal

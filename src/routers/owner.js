@@ -3,30 +3,17 @@ var router = express.Router()
 
 const ownerService = require('../services/owner-service.js');
 
-
-// middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
   console.log('Time: ', Date.now())
   next()
 })
 
 router.get('/', function (req, res, next) {
-    try{
-        res.send('Owner home page')
-    }catch(e){
-        res.sendStatus(409);
-    }
-    next();
+    ownerService.getOwners(res);
 })
 
-///?????????????????????? HIBA ????????????????????? 
 router.get('/:id', function (req, res, next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    ownerService.getOwner(req.params.id,res);
 })
 
 router.post('/', function (req, res,next) {

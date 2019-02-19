@@ -3,8 +3,6 @@ var router = express.Router()
 
 const animalService = require('../services/animal-service.js');
 
-
-// middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
   console.log('Time: ', Date.now())
   next()
@@ -16,19 +14,11 @@ router.get('/', function (req, res, next) {
 
 // define the cats route
 router.get('/cats', function (req, res) {
-    try{
-        res.send('Cats html works!')
-    }catch(e){
-        res.sendStatus(404);
-    }
+    animalService.getCats(res);
 })
+
 router.get('/dogs', function (req, res,next) {
-    try{
-        res.send('Dogs html works!')
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    animalService.getDogs(res);
 })
 
 ///?????????????????????? HIBA ????????????????????? 
@@ -38,12 +28,8 @@ router.get('/:id', function (req, res, next) {
 })
 
 router.post('/', function (req, res,next) {
-    try{
-        res.send('Animal Post')
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    
+    animalService.animalRegistration("Animal",10,res); //???
 })
 router.put('/:id', function (req, res,next) {
     try{

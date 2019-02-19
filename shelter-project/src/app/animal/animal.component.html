@@ -72,14 +72,14 @@
            
                 <tr *ngFor="let animal of animals" (click)="navigateTo(animal.id)">
                   <td>{{animal.name}}</td>
-                  <td>{{animal.animalType=="DOG" ? 'Kutya':'Cica'}}</td>
+                  <td>{{animal.animal_type=="DOG" ? 'Kutya':'Cica'}}</td>
                   <td>{{animal.age}}</td>
                   <td>{{animal.breed}}</td>
                   <td>{{animal.status}}</td>
-                  <td>{{animal.createDate}}</td>
-                  <td>{{animal.getOnWellWithDOGS ? 'igen':'nem'}}</td>
-                  <td>{{animal.getOnWellWithCATS ? 'igen':'nem'}}</td>
-                  <td>{{animal.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                  <td>{{animal.create_date}}</td>
+                  <td>{{animal.get_on_well_with_dogs ? 'igen':'nem'}}</td>
+                  <td>{{animal.get_on_well_with_cats ? 'igen':'nem'}}</td>
+                  <td>{{animal.get_on_well_with_kids ? 'igen':'nem'}}</td>
                   <td *ngIf="isAdmin">
                       <!-- <div class="btn-group"> -->
                         <button class="button" [routerLink]="['/animal/put/'+animal.id]">Szerkesztés</button>

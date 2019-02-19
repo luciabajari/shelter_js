@@ -3,6 +3,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="main-div" *ngIf="!ownersLoading">
+          <!-- <div class="main-div" *ngIf="!ownersLoading"> -->
               <br>
               <div>
                     <h2 class="h2_name">{{animal?.name}} </h2>
@@ -13,7 +14,7 @@
                     
                     <tr class="table-text">
                         <td>Típus: </td>
-                        <td>{{animal?.animalType=="DOG" ? 'Kutya' : 'Cica'}}</td>
+                        <td>{{animal?.animal_type=="DOG" ? 'Kutya' : 'Cica'}}</td>
                     </tr>
                     <tr class="table-text">
                         <td>Életkora: </td>
@@ -21,7 +22,7 @@
                     </tr>
                     <tr class="table-text">
                         <td>Regisztráció dátuma: </td>
-                        <td>{{animal?.createDate}}</td>
+                        <td>{{animal?.create_date}}</td>
                     </tr>
                     <tr class="table-text">
                         <td>Státusz</td>
@@ -33,15 +34,15 @@
                     </tr>
                     <tr class="table-text">
                         <td>Jól kijön a kutyákkal? </td>
-                        <td>{{animal?.getOnWellWithDOGS ? 'Igen' : 'Nem'}}</td>
+                        <td>{{animal?.get_on_well_with_dogs ? 'Igen' : 'Nem'}}</td>
                     </tr>
                     <tr class="table-text">
                         <td>Jól kijön a cicákkal? </td>
-                        <td>{{animal?.getOnWellWithCATS ? 'Igen' : 'Nem'}}</td>
+                        <td>{{animal?.get_on_well_with_cats ? 'Igen' : 'Nem'}}</td>
                     </tr>
                     <tr class="table-text">
                         <td>Jól kijön a gyerekekkel? </td>
-                        <td>{{animal?.getOnWellWithKIDS ? 'Igen' : 'Nem'}}</td>
+                        <td>{{animal?.get_on_well_with_kids ? 'Igen' : 'Nem'}}</td>
                     </tr>
                 </thead>
             </table>

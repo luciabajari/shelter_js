@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: '', component: AnimalComponent},
       { path: 'post', component: AnimalPostComponent},
       { path: 'put/:id', component: AnimalPutComponent},
-      { path: ':id', component: AnimalByIdComponent, canActivate: [AuthGuard] },
+      { path: ':id', component: AnimalByIdComponent },
     ]
   },
   // { path: 'animal', component: AnimalHomeComponent,
@@ -42,6 +42,7 @@ const routes: Routes = [
   //     { path: ':id', component: AnimalByIdComponent, canActivate: [AuthGuard] },
   //   ]
   // },
+  //-------------------------------
   { path: 'owner', component: OwnerHomeComponent,
     children: [
       { path: '', component: OwnerComponent, canActivate: [AuthGuard] },
@@ -55,6 +56,18 @@ const routes: Routes = [
       { path: ':id', component: OwnerByIdComponent, canActivate: [AuthGuard] },
     ]
   },
+//   { path: 'owner', component: OwnerHomeComponent,
+//   children: [
+//     { path: '', component: OwnerComponent},
+//     { path: 'post', component: OwnerPostComponent},
+//     { path: 'put/:id', component: OwnerPutComponent,
+//       data: {
+//         roles: ['ROLE_ADMIN']
+//       }
+//     },
+//     { path: ':id', component: OwnerByIdComponent},
+//   ]
+// },
 
   // {
   //   path:"owner",component: OwnerComponent

@@ -1,3 +1,4 @@
+const connection = require('./db')
 class HospitalService {
 
     getHospitals(){

@@ -23,12 +23,13 @@ export class AnimalByIdComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params.id
+      
 
       this.animalService.getAnimalById(this.id)
         .then(animal => {
           this.animalsLoading = false
           this.animal = animal
-          console.log(this.id)
+          console.log(this.animal)
       }) 
     });
   }

@@ -21,10 +21,10 @@
                     <td >{{dog.name}}</td>
                     <td>{{dog.age}}</td>
                     <td>{{dog.status}}</td>
-                    <td>{{dog.createDate}}</td>
-                    <td>{{dog.getOnWellWithDOGS ? 'igen':'nem'}}</td>
-                    <td>{{dog.getOnWellWithCATS ? 'igen':'nem'}}</td>
-                    <td>{{dog.getOnWellWithKIDS ? 'igen':'nem'}}</td>
+                    <td>{{dog.create_date}}</td>
+                    <td>{{dog.get_on_well_with_dogs ? 'igen':'nem'}}</td>
+                    <td>{{dog.get_on_well_with_cats ? 'igen':'nem'}}</td>
+                    <td>{{dog.get_on_well_with_kids ? 'igen':'nem'}}</td>
                     <td *ngIf="isAdmin">
                         <!-- <div class="btn-group"> -->
                           <button class="button" [routerLink]="['/animal/put/'+dog.id]">Szerkesztés</button>
