@@ -32,21 +32,11 @@ router.post('/', function (req, res,next) {
     animalService.animalRegistration("Animal",10,res); //???
 })
 router.put('/:id', function (req, res,next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    animalService.animalModify(req.params.id,res)
 })
 
 router.delete('/:id',function (req, res,next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    animalService.animalDelete(req.params.id,res)
 })
 
 

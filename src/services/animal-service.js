@@ -39,7 +39,7 @@ class AnimalService {
 
     }
 
-    animalRegistration(animalName,animalAge,res){
+    animalRegistration(animalName,animalAge,res){ //post
         // connection.query("INSERT INTO `animal` (`id`, `name`, `age`, `animal_type`, `create_date`, `status`, `description`, `get_on_well_with_cats`, `get_on_well_with_dogs`, `get_on_well_with_kids`, `owner_id`, `hotel_id`, `hospitals`, `breed`) VALUES (NULL, 'Nyafi', '4', 'CAT', CURRENT_TIMESTAMP, '0', 'Nyafi leírás', '1', '0', '1', '1', '1', '1', 'breed_nyafi')", 
         // function (error, results, fields) {
         //     if (error) throw error;
@@ -59,12 +59,18 @@ class AnimalService {
 
     }
 
-    animalModify(animalId){
-
+    animalModify(animalId,res){ //put
+        
     }
 
-    animalDelete(animalId){
-
+    animalDelete(animalId,res){
+        const id = connection.escape(animalId + '')
+        var sql = "DELETE FROM animal WHERE id = " + id;
+        connection.query(sql, function (error, results, fields) {
+            if (error) throw error;
+            console.log('AnimalById: ', results[0]);
+            res.json(results[0]) //????????????????????????????? ERRE JOBB MEGOLDÁS!!!!!!!!!!
+          });
     }
 
 

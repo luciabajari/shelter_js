@@ -11,12 +11,7 @@ router.use(function timeLog (req, res, next) {
 })
 
 router.get('/', function (req, res, next) {
-    try{
-        res.send('Hotel home page')
-    }catch(e){
-        res.sendStatus(409);
-    }
-    next();
+    hotelService.getHotel(res);
 })
 
 

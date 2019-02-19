@@ -20,16 +20,22 @@ class OwnerService {
     }
 
 
-    ownerRegistration(){
+    ownerRegistration(res){
 
     }
 
-    ownerModify(ownerId){
+    ownerModify(ownerId,res){
 
     }
 
-    ownerDelete(ownerId){
-
+    ownerDelete(ownerId,res){
+        const id = connection.escape(ownerId + '')
+        var sql = "DELETE FROM owner WHERE id = " + id;
+        connection.query(sql, function (error, results, fields) {
+            if (error) throw error;
+            console.log('OwnerById: ', results[0]);
+            res.json(results[0]) //????????????????????????????? ERRE JOBB MEGOLDÁS!!!!!!!!!!
+          });
     }
 
 

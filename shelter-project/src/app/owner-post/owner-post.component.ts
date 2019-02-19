@@ -18,6 +18,7 @@ export class OwnerPostComponent implements OnInit {
   address=''
   role='';
 
+
   constructor(
     private ownerService: OwnerService,
     private router: Router

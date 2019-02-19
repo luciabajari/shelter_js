@@ -11,22 +11,12 @@ router.use(function timeLog (req, res, next) {
 })
 
 router.get('/', function (req, res, next) {
-    try{
-        res.send('Hospital home page')
-    }catch(e){
-        res.sendStatus(409);
-    }
-    next();
+    hospitalService.getHospitals(res);
 })
 
-router.get('/:id', function (req, res, next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
-})
+// router.get('/:id', function (req, res, next) {
+//     hospitalService.getHospitals(req.params.id,res);
+// })
 
 
 module.exports = router

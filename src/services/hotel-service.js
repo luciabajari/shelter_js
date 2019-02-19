@@ -1,8 +1,11 @@
 const connection = require('./db')
 class HotelService {
 
-    getHotel(){
-        console.log('getHotel() method')
+    getHotel(res){
+        connection.query('SELECT * from hotel', function (error, results, fields) {
+            if (error) throw error;
+            res.json(results)
+          });
     }
 }
 

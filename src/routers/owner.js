@@ -17,29 +17,14 @@ router.get('/:id', function (req, res, next) {
 })
 
 router.post('/', function (req, res,next) {
-    try{
-        res.send('Owner Post')
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    ownerService.ownerRegistration(res);
 })
 router.put('/:id', function (req, res,next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    ownerService.ownerModify(req.params.id,res);
 })
 
 router.delete('/:id',function (req, res,next) {
-    try{
-        res.send(req.params)
-    }catch(e){
-        res.sendStatus(404);
-    }
-    next();
+    ownerService.ownerDelete(req.params.id,res)
 })
 
 
