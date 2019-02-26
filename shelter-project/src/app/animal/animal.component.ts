@@ -12,23 +12,24 @@ export class AnimalComponent implements OnInit {
 
   public isAdmin=true
   private animals
-  private animal={
-    id:null,
-    name:'',
-    animalType:'',
-    createDate:'',
-    status:'',
-    breed:'',
-    age:null,
-    description:"",
-    getOnWellWithDOGS:false,
-    getOnWellWithCATS:false,
-    getOnWellWithKIDS:false
+  private animal
+  // private animal={
+  //   id:null,
+  //   name:'',
+  //   animalType:'',
+  //   createDate:'',
+  //   status:'',
+  //   breed:'',
+  //   age:null,
+  //   description:"",
+  //   getOnWellWithDOGS:false,
+  //   getOnWellWithCATS:false,
+  //   getOnWellWithKIDS:false
 
-  }
+  // }
   public animalsLoading = true
   public typeIsTranslated=false;
-
+  animalIsDeleted=false; 
   id=null;
   
 
@@ -72,6 +73,7 @@ export class AnimalComponent implements OnInit {
     this.animalService.deleteAnimal(id).then(()=>{
       console.log("SIKERES TORLES")
       this.loadAnimals()
+     //alert("Sikeres törlés!");
     })
     //Serviceből a delete meghívása, majd navigálás: this.router.navigate([`/animal`]);
     

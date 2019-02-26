@@ -17,9 +17,9 @@ export class AnimalPutComponent implements OnInit {
   private createDate='MOMENT';
   private status;
   private description;
-  private get_on_well_with_dogs;
-  private get_on_well_with_cats
-  private get_on_well_with_kids
+  private getOnWellWithDOGS;
+  private getOnWellWithCATS
+  private getOnWellWithKIDS
 
   private sub
 
@@ -39,15 +39,17 @@ export class AnimalPutComponent implements OnInit {
         .then(animal => {
           this.name = animal.name
           this.age = animal.age
-          this.animalType = animal.animalType
+          this.animalType = animal.animal_type
           this.breed = animal.breed
           this.createDate = animal.createDate
           this.status = animal.status
           this.description = animal.description
-          this.get_on_well_with_dogs = animal.get_on_well_with_dogs
-          this.get_on_well_with_cats = animal.get_on_well_with_cats
-          this.get_on_well_with_kids = animal.get_on_well_with_kids
+          this.getOnWellWithDOGS = animal.get_on_well_with_dogs
+          this.getOnWellWithCATS = animal.get_on_well_with_cats
+          this.getOnWellWithKIDS = animal.get_on_well_with_kids
+          console.log("PUT-PUT", this.getOnWellWithDOGS);
         })
+       
     });
   }
 
@@ -64,12 +66,14 @@ export class AnimalPutComponent implements OnInit {
       createDate: this.createDate ,
       status: this.status ,
       description: this.description ,
-      get_on_well_with_dogs: this.get_on_well_with_dogs ,
-      get_on_well_with_cats: this.get_on_well_with_cats ,
-      get_on_well_with_kids: this.get_on_well_with_kids ,
+      get_on_well_with_dogs: this.getOnWellWithDOGS ,
+      get_on_well_with_cats: this.getOnWellWithCATS ,
+      get_on_well_with_kids: this.getOnWellWithKIDS ,
     }, this.id).then(()=>{
-      console.log("PUT-PUT");
+      
+     
       this.router.navigate(['/animal'])
+      //console.log("PUT-PUT", this.getOnWellWithDOGS);
     })
   }
 

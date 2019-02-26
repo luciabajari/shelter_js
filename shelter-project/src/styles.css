@@ -9102,19 +9102,23 @@ div.side{
 }
 
 */
+
+html{
+  background-color: #dbdfe2;
+}
 article.main-article{
   
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-color: #dbdfe2;
   /* background-image: url("dog-cat.jpg"); */
-  background-position: center;
+  /* background-position: center; */
   padding: 16px;
-  box-shadow: 0px -1px 0px lightcyan, 0px 0px 2px lightcyan, 0px 2px 4px lightcyan;
+  /* box-shadow: 0px -1px 0px lightcyan, 0px 0px 2px lightcyan, 0px 2px 4px lightcyan; */
   /* color: white; */
-  box-shadow: 0 0 1em #eee;
+  /* box-shadow: 0 0 1em #eee; */
   max-width: 100%;
   width: 100%;
-  height:1200px;
+  /* height:1200px; */
   /* height:100%; */
   
 } 
