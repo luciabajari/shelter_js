@@ -33,9 +33,10 @@ export class OwnerPutComponent implements OnInit {
           this.name = owner.name
           this.email = owner.email
           this.password = owner.password
-          this.phoneNumber = owner.phoneNumber
+          this.phoneNumber = owner.phone_number
           this.address = owner.address
           this.role = owner.role
+          console.log("STATUS: ", this.role, typeof this.role);
         })
     });
   }

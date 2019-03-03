@@ -26,10 +26,11 @@
               </p>
           <p>
               <label for="fname"> Státusza: </label>
+              {{role.length == 0 ? NINCS : role}}
             <select [(ngModel)]="role">
-              
-              <option value="ROLE_ADMIN">Admin</option>
+              <option value="ROLE_ADMIN" ng-selected="ADMIN">Admin</option>
               <option value="ROLE_UGYFEL">Ügyfél</option>
+              
               
             </select> 
           </p>

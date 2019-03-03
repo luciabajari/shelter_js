@@ -119,14 +119,16 @@ export class CatsComponent implements OnInit {
     })
   }
   delete (id: number,event) {
-    event.stopPropagation()
-    console.log(event)
-    this.animalService.deleteAnimal(id).then(()=>{
-      console.log("SIKERES TORLES")
+      if (confirm('Biztos törölni szeretné?')) {
+      event.stopPropagation()
+      console.log(event)
+      this.animalService.deleteAnimal(id).then(()=>{
+        console.log("SIKERES TORLES")
+        this.loadAnimals()
+      })
+    }else{
       this.loadAnimals()
-    })
-   
-    
+    }
   }
 }
 

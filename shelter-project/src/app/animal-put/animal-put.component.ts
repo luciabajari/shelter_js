@@ -47,7 +47,7 @@ export class AnimalPutComponent implements OnInit {
           this.getOnWellWithDOGS = animal.get_on_well_with_dogs
           this.getOnWellWithCATS = animal.get_on_well_with_cats
           this.getOnWellWithKIDS = animal.get_on_well_with_kids
-          console.log("PUT-PUT", this.getOnWellWithDOGS);
+          console.log("DOGS::   Type", typeof this.getOnWellWithDOGS, "Value: ",this.getOnWellWithDOGS);
         })
        
     });

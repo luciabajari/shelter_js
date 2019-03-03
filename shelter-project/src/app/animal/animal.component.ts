@@ -68,6 +68,7 @@ export class AnimalComponent implements OnInit {
   }
  
   delete (id: number) {
+    if (confirm('Biztos törölni szeretné?')) {
     event.stopPropagation()
     console.log(event)
     this.animalService.deleteAnimal(id).then(()=>{
@@ -78,4 +79,8 @@ export class AnimalComponent implements OnInit {
     //Serviceből a delete meghívása, majd navigálás: this.router.navigate([`/animal`]);
     
   }
+  else{
+    this.loadAnimals()
+  }
+}
 }

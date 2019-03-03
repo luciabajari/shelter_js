@@ -1,7 +1,7 @@
 const connection = require('./db')
 class OwnerService {
 
-    getowners(res){
+    getOwners(res){
         connection.query('SELECT * from owner', function (error, results, fields) {
             if (error) throw error;
             console.log('Owners: ', results);
@@ -20,12 +20,23 @@ class OwnerService {
     }
 
 
-    ownerRegistration(res){
-
+    ownerRegistration(ownerName,ownerEmail,ownerAddress,ownerPhoneNum,ownerPassword,ownerRole,res){
+        let sql = "INSERT INTO owner (name, email ,address, phone_number, password, role) VALUES (?,?,?,?,?,?)";
+        connection.query(sql, [ownerName,ownerEmail,ownerAddress,ownerPhoneNum,ownerPassword,ownerRole],  
+        function (error, results, fields) {
+            if (error) throw error;
+            res.json(results)
+          });
     }
 
-    ownerModify(ownerId,res){
-
+    ownerModify(ownerId,ownerName,ownerEmail,ownerAddress,ownerPhoneNum,ownerPassword,ownerRole,res){
+        const id = connection.escape(ownerId + '')
+        let sql="UPDATE `owner` SET name=?, email=? ,address=?, phone_number=?, password=?, role=?  WHERE `owner`.`id` =" + id;
+        let data= [ownerName,ownerEmail,ownerAddress,ownerPhoneNum,ownerPassword,ownerRole]
+        connection.query(sql, data,function (error, results, fields) {
+            if (error) throw error;
+            res.json(results[0]) //????????????????????????????? ERRE JOBB MEGOLDÁS!!!!!!!!!!
+          });
     }
 
     ownerDelete(ownerId,res){

@@ -40,11 +40,17 @@ export class OwnerComponent implements OnInit {
   }
 
   delete (id: number, event) {
+    if (confirm('Biztos törölni szeretné?')) {
     event.stopPropagation()
     console.log(event)
     this.ownerService.deleteOwner(id).then(()=>{
       console.log("SIKERES TORLES")
       this.loadUsers()
     })
+  }else{
+    this.loadUsers()
   }
+}
+
+  
 }

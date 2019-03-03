@@ -46,9 +46,8 @@
                   <label for="fname">Jól kijön a kutyákkal? </label>
                 
               <form action="">
-                <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs" value="false" > Nem<br>
-                <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs" value="true" > Igen<br>
-                {{getOnWellWithDOGS}}
+                <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs"  value="false" [value]="0"> Nem<br>
+                <input [(ngModel)]="getOnWellWithDOGS" type="radio" class="form-radio" name="dogs"  value="true" [value]="1"> Igen<br>
               </form>  
             </div>
     
@@ -59,8 +58,8 @@
                 <label for="fname"> Jól kijön a cicákkal? </label>
                 
               <form action="">
-                <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" value="false" > Nem<br>
-                <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" value="true" > Igen<br>
+                <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" value="false" [value]="0" > Nem<br>
+                <input [(ngModel)]="getOnWellWithCATS" type="radio" class="form-radio" name="cats" value="true" [value]="1"> Igen<br>
                 <!-- {{getOnWellWithCATS}} -->
               </form> 
             </div>
@@ -69,8 +68,8 @@
                 <label for="fname">  Jól kijön a gyerekekkel? </label>
                 
               <form action="">
-                <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" value="false" > Nem<br>
-                <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" value="true" > Igen<br>
+                <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" value="false" [value]="0"> Nem<br>
+                <input [(ngModel)]="getOnWellWithKIDS" type="radio" class="form-radio" name="kids" value="true" [value]="1"> Igen<br>
                 <!-- {{getOnWellWithKIDS}} -->
                 <br>
                 <button (click)="edit()">Mentés</button>

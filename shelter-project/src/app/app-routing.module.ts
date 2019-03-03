@@ -43,31 +43,31 @@ const routes: Routes = [
   //   ]
   // },
   //-------------------------------
+  // { path: 'owner', component: OwnerHomeComponent,
+  //   children: [
+  //     { path: '', component: OwnerComponent, canActivate: [AuthGuard] },
+  //     { path: 'post', component: OwnerPostComponent},
+  //     { path: 'put/:id', component: OwnerPutComponent,
+  //       canActivate: [AuthGuard],
+  //       data: {
+  //         roles: ['ROLE_ADMIN']
+  //       }
+  //     },
+  //     { path: ':id', component: OwnerByIdComponent, canActivate: [AuthGuard] },
+  //   ]
+  // },
   { path: 'owner', component: OwnerHomeComponent,
-    children: [
-      { path: '', component: OwnerComponent, canActivate: [AuthGuard] },
-      { path: 'post', component: OwnerPostComponent},
-      { path: 'put/:id', component: OwnerPutComponent,
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['ROLE_ADMIN']
-        }
-      },
-      { path: ':id', component: OwnerByIdComponent, canActivate: [AuthGuard] },
-    ]
-  },
-//   { path: 'owner', component: OwnerHomeComponent,
-//   children: [
-//     { path: '', component: OwnerComponent},
-//     { path: 'post', component: OwnerPostComponent},
-//     { path: 'put/:id', component: OwnerPutComponent,
-//       data: {
-//         roles: ['ROLE_ADMIN']
-//       }
-//     },
-//     { path: ':id', component: OwnerByIdComponent},
-//   ]
-// },
+  children: [
+    { path: '', component: OwnerComponent},
+    { path: 'post', component: OwnerPostComponent},
+    { path: 'put/:id', component: OwnerPutComponent,
+      data: {
+        roles: ['ROLE_ADMIN']
+      }
+    },
+    { path: ':id', component: OwnerByIdComponent},
+  ]
+},
 
   // {
   //   path:"owner",component: OwnerComponent

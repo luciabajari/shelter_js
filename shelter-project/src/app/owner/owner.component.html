@@ -15,14 +15,14 @@
             
             <tr *ngFor="let owner of owners" (click)="navigateTo(owner.id)">
                 <td>{{owner.name}}</td>
-                <td>{{owner.phoneNumber}}</td>
+                <td>{{owner.phone_number}}</td>
                 <td>{{owner.email}}</td>
                 <td>{{owner.address}}</td>
                 <td  *ngIf="isAdmin" class="vert-aligned">
                     <div class="btn-group">
                   <button class="button" [routerLink]="['/owner/put/'+owner.id]">Szerkesztés</button>
-                          
                   <button class="button" (click)="delete(owner.id, $event)">Törlés</button>
+                 
                 </div>
                 </td>
               </tr>
