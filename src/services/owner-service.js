@@ -1,4 +1,6 @@
 const connection = require('./db')
+const jwt  = require('jsonwebtoken');
+
 class OwnerService {
 
     getOwners(res){
@@ -14,9 +16,24 @@ class OwnerService {
         connection.query('SELECT * from owner WHERE id = ' + id, function (error, results, fields) {
             if (error) throw error;
             console.log('ownerId: ', results[0]);
+            
             res.json(results[0]) //????????????????????????????? ERRE JOBB MEGOLDÁS!!!!!!!!!!
           });
         
+    }
+
+    ownerLogin(ownerName,res){
+        const name = connection.escape(ownerName + '')
+       // const pw = connection.escape(ownerPassword + '') 
+        //+'and password= ' + pw
+        let sql = 'SELECT * from owner WHERE name = ' + name;
+        connection.query(sql, [ownerName],  
+            function (error, results, fields) {
+                if (error) throw error;
+                console.log("RES 0", results[0])
+                return results[0]
+                //res.json(results[0])
+              });
     }
 
 

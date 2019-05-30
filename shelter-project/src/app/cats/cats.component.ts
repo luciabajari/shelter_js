@@ -47,6 +47,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimalService } from '../services/animal.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-cats',
@@ -116,6 +117,10 @@ export class CatsComponent implements OnInit {
     .then(cats=>{
       this.catsLoading=false;
       this.cats=cats;
+      for(let i=0;i<this.cats.length;i++){
+        this.cats[i].create_date = moment(this.cats[i].create_date).format('YYYY MMM DD');
+
+      }
     })
   }
   delete (id: number,event) {

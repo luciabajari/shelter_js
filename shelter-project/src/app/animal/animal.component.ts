@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimalService } from '../services/animal.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.component.html',
@@ -34,17 +34,23 @@ export class AnimalComponent implements OnInit {
   
 
   constructor (
+    
     private animalService: AnimalService,
     private router: Router,
     private auth:AuthService
+    
   ) {}
   loadAnimals () {
+    moment.locale('hu');         // hu
     this.animalsLoading=true;
     this.animalService.getAnimals()
     .then(animals=>{
       this.animalsLoading=false;
       this.animals=animals;
-      console.log(this.animals)
+      for(let i=0;i<this.animals.length;i++){
+        this.animals[i].create_date = moment(this.animals[i].create_date).format('YYYY MMM DD');
+
+      }
     })
   }
 

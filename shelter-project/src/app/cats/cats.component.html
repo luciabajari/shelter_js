@@ -20,7 +20,11 @@
                   <tr *ngFor="let cat of cats" (click)="navigateTo(cat.id)">
                     <td >{{cat.name}}</td>
                     <td>{{cat.age}}</td>
-                    <td>{{cat.status}}</td>
+                    <td>{{cat.status=="ADOPTABLE" ? 'Örökbefogadható' 
+                        : cat.status=="ADOPTED" ? 'Örökbefogadott' 
+                        : cat.status=="HOTEL" ? 'Panzióvendég'
+                        : cat.status=="HOSPITAL" ? 'Kezelés alatt' : 'Besorolatlan'
+                      }}</td>
                     <td>{{cat.create_date}}</td>
                     <td>{{cat.get_on_well_with_dogs ? 'igen':'nem'}}</td>
                     <td>{{cat.get_on_well_with_cats ? 'igen':'nem'}}</td>

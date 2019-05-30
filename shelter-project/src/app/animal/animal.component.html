@@ -75,7 +75,10 @@
                   <td>{{animal.animal_type=="DOG" ? 'Kutya':'Cica'}}</td>
                   <td>{{animal.age}}</td>
                   <td>{{animal.breed}}</td>
-                  <td>{{animal.status}}</td>
+                  <td>{{animal.status=="ADOPTABLE" ? 'Örökbefogadható' : animal.status=="ADOPTED" ? 'Örökbefogadott' 
+                    : animal.status=="HOTEL" ? 'Panzióvendég'
+                    : animal.status=="HOSPITAL" ? 'Kezelés alatt' : 'Besorolatlan'
+                  }}</td>
                   <td>{{animal.create_date}}</td>
                   <td>{{animal.get_on_well_with_dogs ? 'igen':'nem'}}</td>
                   <td>{{animal.get_on_well_with_cats ? 'igen':'nem'}}</td>

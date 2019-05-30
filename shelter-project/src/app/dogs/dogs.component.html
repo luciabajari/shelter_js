@@ -20,7 +20,11 @@
                   <tr *ngFor="let dog of dogs" (click)="navigateTo(dog.id)">
                     <td >{{dog.name}}</td>
                     <td>{{dog.age}}</td>
-                    <td>{{dog.status}}</td>
+                    <td>{{dog.status=="ADOPTABLE" ? 'Örökbefogadható' 
+                        : dog.status=="ADOPTED" ? 'Örökbefogadott' 
+                        : dog.status=="HOTEL" ? 'Panzióvendég'
+                        : dog.status=="HOSPITAL" ? 'Kezelés alatt' : 'Besorolatlan'
+                      }}</td>
                     <td>{{dog.create_date}}</td>
                     <td>{{dog.get_on_well_with_dogs ? 'igen':'nem'}}</td>
                     <td>{{dog.get_on_well_with_cats ? 'igen':'nem'}}</td>
